@@ -29,9 +29,13 @@ void printAddCoinMenu();
 
 const char *valueStr(const int n);
 
+void printNSpaces(int n);
+
 void readFile(country *&countries);
 
 void freeMemoryFromCountries(country *&countries);
+
+int readInt();
 
 void addCoin(country *&countries);
 

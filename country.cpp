@@ -234,14 +234,16 @@ void detailedStatistics(country *&countries) {
     std::cout << "Completion: " << (collectionCount * 100.0) / 200.0 << "%" << std::endl;
     std::cout << std::endl;
     std::cout << "Top countries:" << std::endl;
-    for (int i = 0; i < COUNTRIES_COUNT; ++i) {
-        for (int j = 1; j < COUNTRIES_COUNT - 1; ++j) {
+    for (int i = 0; i < COUNTRIES_COUNT - 1; ++i) {
+        for (int j = i + 1; j < COUNTRIES_COUNT; ++j) {
             if (countries[j].collectedCount > countries[i].collectedCount) {
                 country temp = countries[i];
                 countries[i] = countries[j];
                 countries[j] = temp;
             }
         }
+    }
+    for (int i = 0; i < COUNTRIES_COUNT; ++i) {
         std::cout << i + 1 << ". " << countries[i].name << " (" << countries[i].collectedCount << "/8)" <<
                 std::endl;
     }
